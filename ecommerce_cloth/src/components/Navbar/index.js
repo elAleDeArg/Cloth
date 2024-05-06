@@ -1,6 +1,7 @@
 "use client";
 import { adminNavOptions, navOptions, styles } from "@/utils";
-
+import { useContext } from "react";
+import { GlobalContext } from "@/context";
 
 const isAdminView = false;
 const isAuthUser = false;
@@ -35,6 +36,9 @@ function NavItems() {
 }
 
 export default function Navbar() {
+
+  const {showNavModal, setShowNavModal} = useContext(GlobalContext);
+  
   return (
     <nav className=" bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
       <div className="max-w-screen-x1 flex flex-wrap items-center justify-between mx-auto p-4">
